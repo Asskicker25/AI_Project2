@@ -136,6 +136,9 @@ void ApplicationWindow::InitializeWindow(int windowWidth, int windowHeight)
 	//Debugger::Print("DefShader Shader Id : ", defShader.GetShaderId());
 	defShader.applyInverseModel = true;
 
+	skeletonAnimShader.LoadShader("res/Shader/BoneAnimation.shader");
+	skeletonAnimShader.applyInverseModel = true;
+
 	defInstanceShader.LoadShader("res/Shader/DefaultInstancing.shader", Shader::ALPHA_OPAQUE, false);
 
 	alphaBlendShader.LoadShader("res/Shader/Shader.shader");
@@ -153,6 +156,7 @@ void ApplicationWindow::InitializeWindow(int windowWidth, int windowHeight)
 	Renderer::GetInstance().alphaBlendShader = &alphaBlendShader;
 	Renderer::GetInstance().alphaCutOutShader = &alphaCutOutShader;
 	Renderer::GetInstance().defInstanceShader = &defInstanceShader;
+	Renderer::GetInstance().skeletalAnimShader = &skeletonAnimShader;
 
 	Renderer::GetInstance().camera = viewportCamera;
 

@@ -10,3 +10,5 @@
 
 #define GIZMO_ICON_SIZE 0.1f
 
+#define GAME_CAMERA_SPEED 10
+

@@ -4,6 +4,10 @@
 #include <Graphics/Camera/GameCamera.h>
 #include <Graphics/Light/Light.h>
 
+#include "../Camera/CameraController.h"
+#include "../Wanderer/Wanderer.h"
+
+
 using namespace Scene;
 
 class AI_Application;
@@ -23,6 +27,7 @@ public:
 
 private:
 
+	CameraController* mCameraController = nullptr;
 	AI_Application* mApplication = nullptr;
 	GameCamera* mMainCamera = nullptr;
 	Light* mDirLight = nullptr;

@@ -92,10 +92,11 @@ public:
 	DebugCubeData cubeData;
 	DebugLineData lineData;
 
-	UnlitColorShader solidColorShader;
 	Shader defShader;
 	Shader alphaBlendShader;
 	Shader alphaCutOutShader;
+	Shader skeletonAnimShader;
+	UnlitColorShader solidColorShader;
 	UnlitColorShader defInstanceShader;
 	SkyBoxShader skyboxShader;
 

@@ -10,6 +10,8 @@ int main(int argc, char* argv[])
 	Mesh::normalScale = NORMALS_SIZE;
 	Renderer::GetInstance().gizmoIconSize = GIZMO_ICON_SIZE;
 
+	CameraController::MOVE_SPEED = GAME_CAMERA_SPEED;
+
 	application.gameResolutionWidth = GAME_RESOLUTION_WIDTH;
 	application.gameResolutionHeight = GAME_RESOLUTION_HEIGHT;
 

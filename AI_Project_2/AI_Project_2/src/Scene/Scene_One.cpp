@@ -23,11 +23,17 @@ void Scene_One::Start()
 	mDirLight->InitializeLight(Directional);
 	mDirLight->intensity = 0.7;
 
+	mCameraController = new CameraController(mMainCamera);
+
 	Model* floor = new Model("res/Models/DefaultQuad.fbx");
+	floor->meshes[0]->material->AsMaterial()->diffuseTexture = new Texture("Assets/Textures/Floor.jpg");
+	floor->meshes[0]->material->AsMaterial()->textureTiling = glm::vec2(15, 15);
+	floor->name = "Floor";
 	floor->transform.SetPosition(glm::vec3(0));
 	floor->transform.SetRotation(glm::vec3(90,0,0));
 	floor->transform.SetScale(glm::vec3(50));
 
+	Wanderer* wanderer1 = new Wanderer();
 }
 
 void Scene_One::Update()
