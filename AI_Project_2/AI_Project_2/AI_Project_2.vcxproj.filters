@@ -72,6 +72,21 @@
     <ClInclude Include="src\Wanderer\Wanderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Wanderer\States\eWandererState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Wanderer\States\BaseState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Wanderer\States\IdleState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Wanderer\States\MoveToTargetState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Wanderer\States\FindNextTargetState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -120,6 +135,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Wanderer\Wanderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wanderer\States\BaseState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wanderer\States\IdleState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wanderer\States\MoveToTargetState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wanderer\States\FindNextTargetState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
