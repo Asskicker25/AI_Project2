@@ -1,6 +1,6 @@
 #pragma once
 #include "BaseState.h"
-#include "IdleState.h"
+#include "MoveToTargetState.h"
 
 class FindNextTargetState : public BaseState
 {
@@ -11,10 +11,13 @@ public:
 	// Inherited via BaseState
 	void Start() override;
 	void Update(float deltaTime) override;
+	void Render() override;
 	void Cleanup() override;
 
 private:
 
-	IdleState* mIdleState = nullptr;
+	MoveToTargetState* mMoveToTargetState = nullptr;
+
+	// Inherited via BaseState
 };
 

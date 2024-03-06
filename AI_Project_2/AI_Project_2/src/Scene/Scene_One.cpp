@@ -33,7 +33,8 @@ void Scene_One::Start()
 	floor->transform.SetRotation(glm::vec3(90,0,0));
 	floor->transform.SetScale(glm::vec3(50));
 
-	Wanderer* wanderer1 = new Wanderer();
+	WandererInfo wandererInfo1;
+	Wanderer* wanderer1 = new Wanderer(wandererInfo1);
 }
 
 void Scene_One::Update()

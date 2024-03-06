@@ -6,13 +6,18 @@
 #include "States/MoveToTargetState.h"
 #include "States/FindNextTargetState.h"
 
-Wanderer::Wanderer()
+Wanderer::Wanderer(WandererInfo& wandererInfo) : mWandererInfo { wandererInfo }
 {
 	name = "Wanderer";
 	
 	LoadModel("Assets/Models/RaceDriver.fbx");
 	shader = Renderer::GetInstance().skeletalAnimShader;
 	meshes[0]->material->AsMaterial()->diffuseTexture = new Texture("Assets/Textures/RaceDriver.png");
+
+	LoadAndAddAnimationClip("Assets/Animations/RaceDriver_Idle.fbx", "Idle");
+	LoadAndAddAnimationClip("Assets/Animations/RaceDriver_Walk.fbx", "Walk");
+
+	mIsPlaying = true;
 
 	transform.SetScale(glm::vec3(0.02f));
 
@@ -62,6 +67,17 @@ void Wanderer::Update(float deltaTime)
 {
 	SkeletonModel::Update(deltaTime);
 	GetCurrentState()->Update(deltaTime);
+}
+
+void Wanderer::Render()
+{
+	glm::vec3 forwardEndPos = transform.position + (-transform.GetForward() * 5.0f);
+	glm::vec3 rightEndPos = transform.position + (-transform.GetRight() * 5.0f);
+
+	Renderer::GetInstance().DrawLine(transform.position, forwardEndPos, glm::vec4(0, 0, 1, 1));
+	Renderer::GetInstance().DrawLine(transform.position, rightEndPos, glm::vec4(1, 0, 0, 1));
+
+	GetCurrentState()->Render();
 }
 
 void Wanderer::OnPropertyDraw()

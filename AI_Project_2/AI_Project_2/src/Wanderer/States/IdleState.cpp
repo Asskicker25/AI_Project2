@@ -1,6 +1,8 @@
 #include "IdleState.h"
 #include <Graphics/MathUtils.h>
 
+#include "../Wanderer.h"
+
 using namespace MathUtilities;
 
 IdleState::IdleState()
@@ -11,7 +13,7 @@ IdleState::IdleState()
 void IdleState::Start()
 {
 	SetWaitTime();
-	//mWanderer->PlayAnimation("Idle");
+	mWanderer->PlayAnimation("Idle");
 }
 
 void IdleState::Update(float deltaTime)
@@ -25,12 +27,17 @@ void IdleState::Update(float deltaTime)
 	}
 }
 
+void IdleState::Render()
+{
+}
+
+
 void IdleState::Cleanup()
 {
 }
 
 void IdleState::SetWaitTime()
 {
-	mWaitTime = MathUtils::GetRandomFloatNumber(mWaitTimeRange.x, mWaitTimeRange.y);
+	mWaitTime = MathUtils::GetRandomFloatNumber(mWanderer->mWandererInfo.mWaitTimeRange.x, mWanderer->mWandererInfo.mWaitTimeRange.y);
 }
 
