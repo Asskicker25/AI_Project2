@@ -12,7 +12,7 @@ Wanderer::Wanderer(WandererInfo& wandererInfo) : mWandererInfo { wandererInfo }
 	
 	LoadModel("Assets/Models/RaceDriver.fbx");
 	shader = Renderer::GetInstance().skeletalAnimShader;
-	meshes[0]->material->AsMaterial()->diffuseTexture = new Texture("Assets/Textures/RaceDriver.png");
+	//meshes[0]->material->AsMaterial()->diffuseTexture = new Texture("Assets/Textures/RaceDriver.png");
 
 	LoadAndAddAnimationClip("Assets/Animations/RaceDriver_Idle.fbx", "Idle");
 	LoadAndAddAnimationClip("Assets/Animations/RaceDriver_Walk.fbx", "Walk");

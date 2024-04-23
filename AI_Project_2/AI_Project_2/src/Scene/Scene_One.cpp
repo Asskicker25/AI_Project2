@@ -34,7 +34,22 @@ void Scene_One::Start()
 	floor->transform.SetScale(glm::vec3(50));
 
 	WandererInfo wandererInfo1;
+	wandererInfo1.mSpeed = 5;
 	Wanderer* wanderer1 = new Wanderer(wandererInfo1);
+	wanderer1->meshes[0]->material->AsMaterial()->diffuseTexture = new Texture("Assets/Textures/Red.jpg");
+
+	WandererInfo wandererInfo2;
+	wandererInfo1.mAngleOfChange = 30;
+	Wanderer* wanderer2 = new Wanderer(wandererInfo2);
+	wanderer2->transform.SetPosition(glm::vec3(10, 0, 0));
+	wanderer2->meshes[0]->material->AsMaterial()->diffuseTexture = new Texture("Assets/Textures/Green.jpg");
+	
+	WandererInfo wandererInfo3;
+	wandererInfo3.mWaitTimeRange = glm::vec2(4, 6);
+	Wanderer* wanderer3 = new Wanderer(wandererInfo3);
+	wanderer3->transform.SetPosition(glm::vec3(-10, 0, 0));
+	wanderer3->meshes[0]->material->AsMaterial()->diffuseTexture = new Texture("Assets/Textures/Blue.jpg");
+
 }
 
 void Scene_One::Update()
